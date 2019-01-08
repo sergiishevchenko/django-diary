@@ -6,7 +6,7 @@ from .forms import EntryForm
 def index(request):
     entries = Entry.objects.order_by('-date_posted')
 
-    context = {'entries' : entries}
+    context = {'entries': entries}
 
     return render(request, 'entries/index.html', context)
 
@@ -21,6 +21,6 @@ def add(request):
     else:
         form = EntryForm()
 
-    context = {'form' : form}
+    context = {'form': form}
 
     return render(request, 'entries/add.html', context)
